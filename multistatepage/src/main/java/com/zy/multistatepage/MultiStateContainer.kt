@@ -138,9 +138,4 @@ class MultiStateContainer : FrameLayout {
         }
         animator.start()
     }
-
-    override fun onDetachedFromWindow() {
-        super.onDetachedFromWindow()
-        lastState = null
-    }
-}
+g}
