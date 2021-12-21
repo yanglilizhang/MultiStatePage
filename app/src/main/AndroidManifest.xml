@@ -20,6 +20,7 @@
         <activity android:name=".ViewPager2Activity" />
         <activity android:name=".MultiFragmentActivity" />
         <activity android:name=".SmartRefreshLayoutActivity" />
+        <activity android:name=".SmartRefreshLayoutActivity2" />
         <activity android:name=".MultiStateActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

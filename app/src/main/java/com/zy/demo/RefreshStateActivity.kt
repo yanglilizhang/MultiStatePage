@@ -12,18 +12,18 @@ class RefreshStateActivity : BaseActivity<ActivityRefreshStateBinding>() {
     private var count = 0
     override fun initPage() {
         val multiStateActivityRoot = bindMultiState()
+
         lifecycleScope.launchWhenCreated {
             multiStateActivityRoot.show<LoadingState>()
             delay(2000)
-            val errorState = ErrorState().apply {
-                retry {
-                    lifecycleScope.launchWhenCreated {
-                        multiStateActivityRoot.show<LoadingState>()
-                        delay(2000)
-                        multiStateActivityRoot.show(this@apply) {
-                            it.setErrorMsg("鸡你太美 ${++count}")
-                            it.setErrorIcon(R.mipmap.jntm)
-                        }
+            val errorState = ErrorState()
+            errorState.retry {
+                lifecycleScope.launchWhenCreated {
+                    multiStateActivityRoot.show<LoadingState>()
+                    delay(2000)
+                    multiStateActivityRoot.show(errorState) {
+                        it.setErrorMsg("鸡你太美 ${++count}")
+                        it.setErrorIcon(R.mipmap.jntm)
                     }
                 }
             }

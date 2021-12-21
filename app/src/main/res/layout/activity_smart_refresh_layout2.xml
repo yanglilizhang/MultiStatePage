@@ -14,18 +14,16 @@
         app:layout_constraintBottom_toTopOf="@id/ll"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.zy.multistatepage.MultiStateContainer
-            android:id="@+id/container"
-            android:layout_width="match_parent"
-            android:minHeight="300dp"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-        </com.zy.multistatepage.MultiStateContainer>
     </com.scwang.smart.refresh.layout.SmartRefreshLayout>
 
     <LinearLayout

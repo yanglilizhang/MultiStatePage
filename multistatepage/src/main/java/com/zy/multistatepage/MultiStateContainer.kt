@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import android.widget.Toast
 import com.zy.multistatepage.state.SuccessState
 
 /**
@@ -24,7 +25,9 @@ class MultiStateContainer : FrameLayout {
 
     private var originTargetView: View? = null
 
-    private var lastState: String = ""
+    private var lastState: MultiState? = null
+
+    var currentState: MultiState? = null
 
     private var statePool: MutableMap<Class<out MultiState>, MultiState> = mutableMapOf()
 
@@ -63,7 +66,6 @@ class MultiStateContainer : FrameLayout {
             ViewGroup.LayoutParams.MATCH_PARENT
         )
         addView(originTargetView, 0, layoutParams)
-        // MultiStatePage.config?.defaultState?.let { show(it) }
     }
 
     inline fun <reified T : MultiState> show(enableAnimator: Boolean = true, noinline notify: (T) -> Unit = {}) {
@@ -79,25 +81,35 @@ class MultiStateContainer : FrameLayout {
         if (childCount == 0) {
             initialization()
         }
-        if (childCount > 1) {
-            removeViewAt(1)
-        }
+
         if (multiState is SuccessState) {
+            if (childCount > 1) {
+                removeViewAt(1)
+            }
             //如果上次展示的是SuccessState则跳过
-            if (lastState != SuccessState::class.java.name) {
+            if (lastState !is SuccessState) {
                 originTargetView?.visibility = View.VISIBLE
                 if (enableAnimator) originTargetView?.executeAnimator()
             }
         } else {
             originTargetView?.visibility = View.INVISIBLE
-            val currentStateView = multiState.onCreateMultiStateView(context, LayoutInflater.from(context), this)
-            multiState.onMultiStateViewCreate(currentStateView)
-            addView(currentStateView)
-            if (enableAnimator) currentStateView.executeAnimator()
+            if (lastState != multiState) {
+                if (childCount > 1) {
+                    removeViewAt(1)
+                }
+                val currentStateView = multiState.onCreateMultiStateView(context, LayoutInflater.from(context), this)
+                multiState.onMultiStateViewCreate(currentStateView)
+                addView(currentStateView)
+                if (enableAnimator) {
+                    currentStateView.executeAnimator()
+                }
+            }
             onNotifyListener?.onNotify(multiState)
         }
+        // 当前state
+        currentState = multiState
         //记录上次展示的state
-        lastState = multiState.javaClass.name
+        lastState = multiState
     }
 
     @JvmOverloads
@@ -125,5 +137,10 @@ class MultiStateContainer : FrameLayout {
             this.alpha = it.animatedValue as Float
         }
         animator.start()
+    }
+
+    override fun onDetachedFromWindow() {
+        super.onDetachedFromWindow()
+        lastState = null
     }
 }

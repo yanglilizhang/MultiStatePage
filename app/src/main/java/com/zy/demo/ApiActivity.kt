@@ -33,8 +33,8 @@ class ApiActivity : BaseActivity<ActivityApiBinding>() {
             multiState.show<LottieWaitingState>()
         }
 
+        val lottieOtherState = LottieOtherState()
         viewBinding.btnLottie2.setOnClickListener {
-            val lottieOtherState = LottieOtherState()
             lottieOtherState.retry = {
                 Toast.makeText(this, "retry...", Toast.LENGTH_SHORT).show()
             }

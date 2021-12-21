@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.zy.demo.base.BaseFragment
 import com.zy.demo.base.mockError
-import com.zy.demo.base.mockSuccess
 import com.zy.demo.databinding.FragmentMultiStateBinding
 import com.zy.multistatepage.MultiStateContainer
 import com.zy.multistatepage.bindMultiState
@@ -26,7 +25,6 @@ class MultiStateFragment : BaseFragment<FragmentMultiStateBinding>() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        inflater.inflate(R.layout.activity_api, container, false)
         val root = super.onCreateView(inflater, container, savedInstanceState)
         multiState = root!!.bindMultiState()
         multiState.show<LoadingState>()

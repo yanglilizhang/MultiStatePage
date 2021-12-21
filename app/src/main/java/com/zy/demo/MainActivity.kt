@@ -44,5 +44,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             startActivity<SmartRefreshLayoutActivity>()
         }
 
+        viewBinding.smartRefreshLayout2.setOnClickListener {
+            startActivity<SmartRefreshLayoutActivity2>()
+        }
     }
 }

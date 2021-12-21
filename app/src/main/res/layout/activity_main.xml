@@ -69,6 +69,12 @@
         android:text="结合SmartRefreshLayout使用" />
 
     <Button
+        android:id="@+id/smart_refresh_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="结合SmartRefreshLayout使用2" />
+
+    <Button
         android:id="@+id/btn_view_model"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

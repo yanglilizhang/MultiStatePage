@@ -74,7 +74,7 @@ class SmartRefreshLayoutActivity : BaseActivity<ActivitySmartRefreshLayoutBindin
         return data
     }
 
-    inner class RlvAdapter : RecyclerView.Adapter<RlvAdapter.Holder>() {
+    class RlvAdapter : RecyclerView.Adapter<RlvAdapter.Holder>() {
 
         var data = mutableListOf<String>()
 

@@ -3,6 +3,7 @@ package com.zy.demo
 import com.zy.demo.base.BaseActivity
 import com.zy.demo.base.mockError
 import com.zy.demo.base.mockSuccess
+import com.zy.demo.base.showLoading
 import com.zy.demo.databinding.ActivityMultiViewBinding
 import com.zy.multistatepage.bindMultiState
 
