@@ -13,11 +13,7 @@ import com.zy.multistatepage.OnNotifyListener;
 import com.zy.demo.state.LottieOtherState;
 
 /**
- * @ProjectName: MultiStatePage
- * @Author: 赵岩
- * @Email: 17635289240@163.com
- * @Description: TODO
- * @CreateDate: 2020/9/19 12:39
+ * @author: yanz
  */
 class Test extends Activity {
 

@@ -1,21 +1,12 @@
 package com.zy.demo
 
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zy.demo.base.*
 import com.zy.demo.databinding.ActivitySmartRefreshLayout2Binding
-import com.zy.demo.databinding.ActivitySmartRefreshLayoutBinding
 import com.zy.multistatepage.bindMultiState
 import kotlinx.coroutines.delay
 
-/**
- * @ProjectName: MultiStatePage
- * @Author: jojo
- * @Email: 17635289240@163.com
- * @CreateDate: 2021/8/2 5:48 下午
- * @Description: TODO
- */
 class SmartRefreshLayoutActivity2 : BaseActivity<ActivitySmartRefreshLayout2Binding>() {
     private val rlvAdapter = SmartRefreshLayoutActivity.RlvAdapter()
     private val container by lazy { viewBinding.recyclerView.bindMultiState() }

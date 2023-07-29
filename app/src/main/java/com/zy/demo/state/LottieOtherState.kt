@@ -8,11 +8,7 @@ import com.zy.multistatepage.MultiState
 import com.zy.multistatepage.MultiStateContainer
 
 /**
- * @ProjectName: MultiStatePage
- * @Author: 赵岩
- * @Email: 17635289240@163.com
- * @Description: TODO
- * @CreateDate: 2020/9/17 16:58
+ * @author: yanz
  */
 class LottieOtherState : MultiState() {
 

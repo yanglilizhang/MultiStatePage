@@ -1,6 +1,7 @@
 package com.zy.multistatepage.state
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
@@ -10,18 +11,14 @@ import com.zy.multistatepage.MultiStatePage
 import com.zy.multistatepage.R
 
 /**
- * @ProjectName: MultiStatePage
- * @Author: 赵岩
- * @Email: 17635289240@163.com
- * @Description: TODO
- * @CreateDate: 2020/9/17 14:15
+ * @author: yanz
  */
 class LoadingState : MultiState() {
     private lateinit var tvLoadingMsg: TextView
     override fun onCreateMultiStateView(
         context: Context,
         inflater: LayoutInflater,
-        container: MultiStateContainer
+        container: MultiStateContainer,
     ): View {
         return inflater.inflate(R.layout.mult_state_loading, container, false)
     }
@@ -29,6 +26,15 @@ class LoadingState : MultiState() {
     override fun onMultiStateViewCreate(view: View) {
         tvLoadingMsg = view.findViewById(R.id.tv_loading_msg)
         setLoadingMsg(MultiStatePage.config.loadingMsg)
+    }
+
+    override fun onMultiStateViewHiddenChanged(hide: Boolean) {
+        super.onMultiStateViewHiddenChanged(hide)
+        if (hide) {
+            Log.e("TAG", "LoadingState: 隐藏了")
+        } else {
+            Log.e("TAG", "LoadingState: 显示了")
+        }
     }
 
     fun setLoadingMsg(loadingMsg: String) {

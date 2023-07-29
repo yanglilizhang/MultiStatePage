@@ -12,11 +12,7 @@ import com.zy.multistatepage.MultiStatePage
 import com.zy.multistatepage.R
 
 /**
- * @ProjectName: MultiStatePage
- * @Author: 赵岩
- * @Email: 17635289240@163.com
- * @Description: TODO
- * @CreateDate: 2020/9/17 14:15
+ * @author: yanz
  */
 class EmptyState : MultiState() {
 

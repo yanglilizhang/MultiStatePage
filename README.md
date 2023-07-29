@@ -158,10 +158,18 @@ class LottieWaitingState : MultiState() {
     override fun onMultiStateViewCreate(view: View) {
         //逻辑处理
     }
+
+    override fun onMultiStateViewHiddenChanged(hide: Boolean) {
+        if (hide) { 
+            // State 隐藏
+        } else { 
+            // State 显示
+        }
+    }
 }
 ```
 结合`ViewBidng` 参考 `demo` [MultiStateBinding](app/src/main/java/com/zy/multistatepage/base/MultiStateBinding.kt) 和 [WithBindingState](app/src/main/java/com/zy/multistatepage/state/WithBindingState.kt)
-
+''
 ### 使用内置状态配置
 
 **默认内置3种状态（强烈建议您自定义State）**

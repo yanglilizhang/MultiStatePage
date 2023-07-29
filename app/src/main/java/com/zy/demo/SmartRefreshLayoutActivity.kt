@@ -9,16 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.zy.demo.base.*
 import com.zy.demo.databinding.ActivitySmartRefreshLayoutBinding
 import com.zy.demo.databinding.RlvItemBinding
-import kotlinx.android.synthetic.main.multi_lottie_other.*
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
-/**
- * @ProjectName: MultiStatePage
- * @Author: 赵岩
- * @Email: 17635289240@163.com
- * @Description: TODO
- * @CreateDate: 2021/2/9 14:33
- */
 class SmartRefreshLayoutActivity : BaseActivity<ActivitySmartRefreshLayoutBinding>() {
 
     private val rlvAdapter = RlvAdapter()
@@ -58,7 +51,7 @@ class SmartRefreshLayoutActivity : BaseActivity<ActivitySmartRefreshLayoutBindin
     }
 
     private fun loadData() {
-        lifecycleScope.launchWhenResumed {
+        lifecycleScope.launch {
             viewBinding.container.showLoading()
             delay(3000)
             rlvAdapter.refreshData(getData(50))

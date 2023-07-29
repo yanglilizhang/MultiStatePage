@@ -3,13 +3,8 @@ package com.zy.multistatepage
 import androidx.annotation.DrawableRes
 
 /**
- * @ProjectName: MultiStatePage
- * @Author: 赵岩
- * @Email: 17635289240@163.com
- * @Description: TODO
- * @CreateDate: 2020/9/19 12:30
+ * @author: yanz
  */
-
 data class MultiStateConfig(
     val errorMsg: String = "哎呀,出错了",
     @DrawableRes
@@ -19,7 +14,7 @@ data class MultiStateConfig(
     val emptyIcon: Int = R.mipmap.state_empty,
     val loadingMsg: String = "loading...",
     var alphaDuration: Long = 500,
-//    val defaultState: MultiState? = null
+    val defaultState: MultiState? = null
 ) {
 
     class Builder {

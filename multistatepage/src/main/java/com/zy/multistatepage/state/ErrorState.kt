@@ -1,6 +1,7 @@
 package com.zy.multistatepage.state
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
@@ -13,11 +14,7 @@ import com.zy.multistatepage.MultiStatePage
 import com.zy.multistatepage.R
 
 /**
- * @ProjectName: MultiStatePage
- * @Author: 赵岩
- * @Email: 17635289240@163.com
- * @Description: TODO
- * @CreateDate: 2020/9/17 14:15
+ * @author: yanz
  */
 class ErrorState : MultiState() {
 
@@ -60,5 +57,13 @@ class ErrorState : MultiState() {
 
     fun interface OnRetryClickListener {
         fun retry()
+    }
+    override fun onMultiStateViewHiddenChanged(hide: Boolean) {
+        super.onMultiStateViewHiddenChanged(hide)
+        if (hide) {
+            Log.e("TAG", "ErrorState: 隐藏了")
+        } else {
+            Log.e("TAG", "ErrorState: 显示了")
+        }
     }
 }

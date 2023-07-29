@@ -9,11 +9,7 @@ import androidx.viewbinding.ViewBinding
 import java.lang.reflect.ParameterizedType
 
 /**
- * @ProjectName: MultiStatePage
- * @Author: 赵岩
- * @Email: 17635289240@163.com
- * @Description: TODO
- * @CreateDate: 2020/9/17 14:34
+ * @author: yanz
  */
 abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     lateinit var viewBinding: VB

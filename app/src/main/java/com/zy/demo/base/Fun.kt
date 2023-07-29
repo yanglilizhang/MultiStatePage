@@ -12,11 +12,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 /**
- * @ProjectName: MultiStatePage
- * @Author: 赵岩
- * @Email: 17635289240@163.com
- * @Description: TODO
- * @CreateDate: 2020/9/17 15:04
+ * @author: yanz
  */
 fun mockRandom(multiStateContainer: MultiStateContainer, block: () -> Unit) {
     MainScope().launch {

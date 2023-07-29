@@ -9,6 +9,7 @@ import com.zy.multistatepage.state.ErrorState
 import com.zy.demo.state.LottieWaitingState
 import com.zy.multistatepage.state.SuccessState
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -22,7 +23,7 @@ class MockNetActivity : BaseActivity<ActivityMockNetBinding>() {
     }
 
     private fun loadData() {
-        lifecycleScope.launchWhenCreated {
+        lifecycleScope.launch {
             try {
                 multiState.show<LottieWaitingState>()
                 val request =

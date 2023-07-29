@@ -7,11 +7,7 @@ import androidx.viewbinding.ViewBinding
 import java.lang.reflect.ParameterizedType
 
 /**
- * @ProjectName: MultiStatePage
- * @Author: 赵岩
- * @Email: 17635289240@163.com
- * @Description: TODO
- * @CreateDate: 2020/9/17 14:31
+ * @author: yanz
  */
 abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
     lateinit var viewBinding: VB

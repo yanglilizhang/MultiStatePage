@@ -14,11 +14,7 @@ import com.zy.multistatepage.MultiStateContainer;
 import com.zy.multistatepage.MultiStatePage;
 
 /**
- * @ProjectName: MultiStatePage
- * @Author: 赵岩
- * @Email: 17635289240@163.com
- * @Description: TODO
- * @CreateDate: 2020/11/4 18:41
+ * @author: yanz
  */
 class JavaFragment extends Fragment {
     @Nullable

@@ -1,25 +1,15 @@
 package com.zy.demo.base
 
 import android.app.Application
-import android.content.Context
 import com.scwang.smart.refresh.footer.ClassicsFooter
 import com.scwang.smart.refresh.header.ClassicsHeader
 import com.scwang.smart.refresh.layout.SmartRefreshLayout
-import com.scwang.smart.refresh.layout.api.RefreshHeader
-import com.scwang.smart.refresh.layout.api.RefreshLayout
-import com.scwang.smart.refresh.layout.listener.DefaultRefreshHeaderCreator
 import com.zy.demo.R
 import com.zy.multistatepage.MultiStateConfig
 import com.zy.multistatepage.MultiStatePage
-import com.zy.multistatepage.state.EmptyState
-
 
 /**
- * @ProjectName: MultiStatePage
- * @Author: 赵岩
- * @Email: 17635289240@163.com
- * @Description: TODO
- * @CreateDate: 2020/9/17 14:42
+ * @author: yanz
  */
 class App : Application() {
     override fun onCreate() {

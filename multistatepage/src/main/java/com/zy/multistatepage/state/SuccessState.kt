@@ -8,11 +8,7 @@ import com.zy.multistatepage.MultiStateContainer
 import com.zy.multistatepage.R
 
 /**
- * @ProjectName: MultiStatePage
- * @Author: 赵岩
- * @Email: 17635289240@163.com
- * @Description: TODO
- * @CreateDate: 2020/9/17 14:11
+ * @author: yanz
  */
 class SuccessState : MultiState() {
     override fun onCreateMultiStateView(

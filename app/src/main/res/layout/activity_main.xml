@@ -74,10 +74,4 @@
         android:layout_height="wrap_content"
         android:text="结合SmartRefreshLayout使用2" />
 
-    <Button
-        android:id="@+id/btn_view_model"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="结合ViewModel Retrofit 协程 实现网络请求\n(敬请期待后续WanAnadroid项目)"
-        android:textAllCaps="false" />
 </LinearLayout>
