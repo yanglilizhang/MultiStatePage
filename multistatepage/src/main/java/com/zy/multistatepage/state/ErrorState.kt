@@ -31,7 +31,7 @@ class ErrorState : MultiState() {
         return inflater.inflate(R.layout.mult_state_error, container, false)
     }
 
-    override fun onViewCreate(view: View) {
+    override fun onViewCreated(view: View) {
         tvErrorMsg = view.findViewById(R.id.tv_error_msg)
         imgError = view.findViewById(R.id.img_error)
         tvRetry = view.findViewById(R.id.tv_retry)

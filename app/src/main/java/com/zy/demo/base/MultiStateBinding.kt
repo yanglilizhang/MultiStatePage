@@ -33,7 +33,7 @@ abstract class MultiStateBinding<VB : ViewBinding> : MultiState() {
         return viewBinding.root
     }
 
-    override fun onViewCreate(view: View) {
+    override fun onViewCreated(view: View) {
         onMultiStateViewCreate()
     }
 

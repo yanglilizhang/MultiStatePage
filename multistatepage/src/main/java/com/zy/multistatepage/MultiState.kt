@@ -21,7 +21,7 @@ abstract class MultiState {
     /**
      * stateView创建完成
      */
-    abstract fun onViewCreate(view: View)
+    abstract fun onViewCreated(view: View)
 
 
     open fun onHiddenChanged(hide: Boolean) {

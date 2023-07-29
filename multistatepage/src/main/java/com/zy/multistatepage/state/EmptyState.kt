@@ -27,7 +27,7 @@ class EmptyState : MultiState() {
         return inflater.inflate(R.layout.mult_state_empty, container, false)
     }
 
-    override fun onViewCreate(view: View) {
+    override fun onViewCreated(view: View) {
         tvEmptyMsg = view.findViewById(R.id.tv_empty_msg)
         imgEmpty = view.findViewById(R.id.img_empty)
 

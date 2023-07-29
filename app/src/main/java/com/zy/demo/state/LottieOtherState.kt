@@ -22,7 +22,7 @@ class LottieOtherState : MultiState() {
         return inflater.inflate(R.layout.multi_lottie_other, container, false)
     }
 
-    override fun onViewCreate(view: View) {
+    override fun onViewCreated(view: View) {
         view.findViewById<View>(R.id.view).setOnClickListener { retry?.invoke() }
     }
 

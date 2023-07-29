@@ -92,7 +92,7 @@ open class MultiStateContainer : FrameLayout {
                     removeViewAt(1)
                 }
                 val currentStateView = multiState.onCreateView(context, LayoutInflater.from(context), this)
-                multiState.onViewCreate(currentStateView)
+                multiState.onViewCreated(currentStateView)
                 addView(currentStateView)
                 lastState?.onHiddenChanged(true)
                 multiState.onHiddenChanged(false)

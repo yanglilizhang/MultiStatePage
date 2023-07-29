@@ -19,7 +19,7 @@ class LottieWaitingState : MultiState() {
         return inflater.inflate(R.layout.multi_lottie_waiting, container, false)
     }
 
-    override fun onViewCreate(view: View) {
+    override fun onViewCreated(view: View) {
     }
 
 }

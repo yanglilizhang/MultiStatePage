@@ -23,7 +23,7 @@ class LoadingState : MultiState() {
         return inflater.inflate(R.layout.mult_state_loading, container, false)
     }
 
-    override fun onViewCreate(view: View) {
+    override fun onViewCreated(view: View) {
         tvLoadingMsg = view.findViewById(R.id.tv_loading_msg)
         setLoadingMsg(MultiStatePage.config.loadingMsg)
     }

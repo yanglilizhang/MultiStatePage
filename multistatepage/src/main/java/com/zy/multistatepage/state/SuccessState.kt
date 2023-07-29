@@ -19,6 +19,6 @@ class SuccessState : MultiState() {
         return View(context)
     }
 
-    override fun onViewCreate(view: View) = Unit
+    override fun onViewCreated(view: View) = Unit
 
 }
