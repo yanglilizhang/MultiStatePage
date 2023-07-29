@@ -12,7 +12,7 @@ abstract class MultiState {
     /**
      * 创建stateView
      */
-    abstract fun onCreateMultiStateView(
+    abstract fun onCreateView(
         context: Context,
         inflater: LayoutInflater,
         container: MultiStateContainer,
@@ -21,10 +21,10 @@ abstract class MultiState {
     /**
      * stateView创建完成
      */
-    abstract fun onMultiStateViewCreate(view: View)
+    abstract fun onViewCreate(view: View)
 
 
-    open fun onMultiStateViewHiddenChanged(hide: Boolean) {
+    open fun onHiddenChanged(hide: Boolean) {
 
     }
 }

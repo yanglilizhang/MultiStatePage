@@ -1,17 +1,12 @@
 package com.zy.multistatepage
 
 import android.animation.ValueAnimator
-import android.annotation.SuppressLint
 import android.content.Context
-import android.os.Build
 import android.util.AttributeSet
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
-import android.widget.Toast
-import androidx.annotation.CallSuper
 import com.zy.multistatepage.state.SuccessState
 
 /**
@@ -85,7 +80,7 @@ open class MultiStateContainer : FrameLayout {
             }
             if (lastState !is SuccessState) {
                 originTargetView?.visibility = View.VISIBLE
-                lastState?.onMultiStateViewHiddenChanged(true)
+                lastState?.onHiddenChanged(true)
                 if (enableAnimator) {
                     originTargetView?.executeAnimator()
                 }
@@ -96,11 +91,11 @@ open class MultiStateContainer : FrameLayout {
                 if (childCount > 1) {
                     removeViewAt(1)
                 }
-                val currentStateView = multiState.onCreateMultiStateView(context, LayoutInflater.from(context), this)
-                multiState.onMultiStateViewCreate(currentStateView)
+                val currentStateView = multiState.onCreateView(context, LayoutInflater.from(context), this)
+                multiState.onViewCreate(currentStateView)
                 addView(currentStateView)
-                lastState?.onMultiStateViewHiddenChanged(true)
-                multiState.onMultiStateViewHiddenChanged(false)
+                lastState?.onHiddenChanged(true)
+                multiState.onHiddenChanged(false)
                 if (enableAnimator) {
                     currentStateView.executeAnimator()
                 }

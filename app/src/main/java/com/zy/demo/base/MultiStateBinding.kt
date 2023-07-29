@@ -16,7 +16,7 @@ abstract class MultiStateBinding<VB : ViewBinding> : MultiState() {
 
     lateinit var viewBinding: VB
 
-    override fun onCreateMultiStateView(
+    override fun onCreateView(
         context: Context,
         inflater: LayoutInflater,
         container: MultiStateContainer
@@ -33,7 +33,7 @@ abstract class MultiStateBinding<VB : ViewBinding> : MultiState() {
         return viewBinding.root
     }
 
-    override fun onMultiStateViewCreate(view: View) {
+    override fun onViewCreate(view: View) {
         onMultiStateViewCreate()
     }
 

@@ -7,7 +7,6 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.DrawableRes
-import androidx.annotation.IdRes
 import com.zy.multistatepage.MultiState
 import com.zy.multistatepage.MultiStateContainer
 import com.zy.multistatepage.MultiStatePage
@@ -24,7 +23,7 @@ class ErrorState : MultiState() {
 
     private var retry: OnRetryClickListener? = null
 
-    override fun onCreateMultiStateView(
+    override fun onCreateView(
         context: Context,
         inflater: LayoutInflater,
         container: MultiStateContainer
@@ -32,7 +31,7 @@ class ErrorState : MultiState() {
         return inflater.inflate(R.layout.mult_state_error, container, false)
     }
 
-    override fun onMultiStateViewCreate(view: View) {
+    override fun onViewCreate(view: View) {
         tvErrorMsg = view.findViewById(R.id.tv_error_msg)
         imgError = view.findViewById(R.id.img_error)
         tvRetry = view.findViewById(R.id.tv_retry)
@@ -58,8 +57,8 @@ class ErrorState : MultiState() {
     fun interface OnRetryClickListener {
         fun retry()
     }
-    override fun onMultiStateViewHiddenChanged(hide: Boolean) {
-        super.onMultiStateViewHiddenChanged(hide)
+    override fun onHiddenChanged(hide: Boolean) {
+        super.onHiddenChanged(hide)
         if (hide) {
             Log.e("TAG", "ErrorState: 隐藏了")
         } else {

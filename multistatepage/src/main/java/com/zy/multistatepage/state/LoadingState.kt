@@ -15,7 +15,7 @@ import com.zy.multistatepage.R
  */
 class LoadingState : MultiState() {
     private lateinit var tvLoadingMsg: TextView
-    override fun onCreateMultiStateView(
+    override fun onCreateView(
         context: Context,
         inflater: LayoutInflater,
         container: MultiStateContainer,
@@ -23,13 +23,13 @@ class LoadingState : MultiState() {
         return inflater.inflate(R.layout.mult_state_loading, container, false)
     }
 
-    override fun onMultiStateViewCreate(view: View) {
+    override fun onViewCreate(view: View) {
         tvLoadingMsg = view.findViewById(R.id.tv_loading_msg)
         setLoadingMsg(MultiStatePage.config.loadingMsg)
     }
 
-    override fun onMultiStateViewHiddenChanged(hide: Boolean) {
-        super.onMultiStateViewHiddenChanged(hide)
+    override fun onHiddenChanged(hide: Boolean) {
+        super.onHiddenChanged(hide)
         if (hide) {
             Log.e("TAG", "LoadingState: 隐藏了")
         } else {

@@ -11,7 +11,7 @@ import com.zy.multistatepage.R
  * @author: yanz
  */
 class SuccessState : MultiState() {
-    override fun onCreateMultiStateView(
+    override fun onCreateView(
         context: Context,
         inflater: LayoutInflater,
         container: MultiStateContainer
@@ -19,6 +19,6 @@ class SuccessState : MultiState() {
         return View(context)
     }
 
-    override fun onMultiStateViewCreate(view: View) = Unit
+    override fun onViewCreate(view: View) = Unit
 
 }

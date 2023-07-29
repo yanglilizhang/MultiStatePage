@@ -11,7 +11,7 @@ import com.zy.multistatepage.MultiStateContainer
  * @author: yanz
  */
 class LottieWaitingState : MultiState() {
-    override fun onCreateMultiStateView(
+    override fun onCreateView(
         context: Context,
         inflater: LayoutInflater,
         container: MultiStateContainer,
@@ -19,7 +19,7 @@ class LottieWaitingState : MultiState() {
         return inflater.inflate(R.layout.multi_lottie_waiting, container, false)
     }
 
-    override fun onMultiStateViewCreate(view: View) {
+    override fun onViewCreate(view: View) {
     }
 
 }
