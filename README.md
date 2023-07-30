@@ -1,8 +1,8 @@
-![](imgs/carbon_code.svg)
-
 # MultiStatePage
 
 [![](https://jitpack.io/v/Zhao-Yan-Yan/MultiStatePage.svg)](https://jitpack.io/#Zhao-Yan-Yan/MultiStatePage) [![License](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](https://github.com/Zhao-Yan-Yan/MultiStatePage/blob/master/LICENSE) ![](https://img.shields.io/badge/language-kotlin-orange.svg)
+
+![img_2.png](imgs/code.png)
 
 | [Activity](app/src/main/java/com/zy/demo/MultiStateActivity.kt) | [Fragment](app/src/main/java/com/zy/demo/MultiFragmentActivity.kt) | [View](app/src/main/java/com/zy/demo/MultiViewActivity.kt) | [ViewPager2](app/src/main/java/com/zy/demo/ViewPager2Activity.kt) |
 |:---------------------------------------------------------------:|:------------------------------------------------------------------:|:----------------------------------------------------------:|:-----------------------------------------------------------------:|
@@ -10,7 +10,7 @@
 
 | [Lottie拓展（自定义State）](app/src/main/java/com/zy/demo/LottieExtActivity.kt) | [State刷新](app/src/main/java/com/zy/demo/RefreshStateActivity.kt) | [网络请求](app/src/main/java/com/zy/demo/MockNetActivity.kt) | [sample](app/src/main/java/com/zy/demo/ApiActivity.kt) |
 |:------------------------------------------------------------------------:|:----------------------------------------------------------------:|:--------------------------------------------------------:|:------------------------------------------------------:|
-|                      ![lottie.gif](imgs/lottie.gif)                      |                     ![net.gif](imgs/net.gif)                     |                 ![net.gif](imgs/net.gif)                 |                ![api.gif](imgs/api.gif)                |
+|                      ![lottie.gif](imgs/lottie.gif)                      |                 ![net.gif](imgs/state_call.gif)                  |                 ![net.gif](imgs/net.gif)                 |                ![api.gif](imgs/api.gif)                |
 
 ## MultiStatePage的功能及特点
 
@@ -85,9 +85,15 @@ class MultiStateFragment : Fragment {
 
 ```xml
 
-<com.zy.multistatepage.MultiStateContainer android:id="@+id/container" android:layout_width="match_parent" android:layout_height="match_parent">
+<com.zy.multistatepage.MultiStateContainer 
+    android:id="@+id/container" 
+    android:layout_width="match_parent" 
+    android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView android:id="@+id/recycler_view" android:layout_width="match_parent" android:layout_height="match_parent" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view" 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </com.zy.multistatepage.MultiStateContainer>
 ```
@@ -219,14 +225,14 @@ class App : Application() {
 }
 ```
 
-|     method      |       作用        |
-|:---------------:|:---------------:|
-| `alphaDuration` |    alpha动画时长    |
-|   `errorIcon`   |    错误状态默认图标     |
-|   `emptyIcon`   |    空数据状态默认图标    |
-|   `emptyMsg`    |   空数据状态默认提示信息   |
-|   `errorMsg`    |   错误状态默认提示信息    |
-|  `loadingMsg`   | loading状态默认提示信息 |
+|    Methods    |   Description   |
+|:-------------:|:---------------:|
+| alphaDuration |    alpha动画时长    |
+|   errorIcon   |    错误状态默认图标     |
+|   emptyIcon   |    空数据状态默认图标    |
+|   emptyMsg    |   空数据状态默认提示信息   |
+|   errorMsg    |   错误状态默认提示信息    |
+|  loadingMsg   | loading状态默认提示信息 |
 
 ### 小技巧
 
@@ -287,3 +293,4 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ```
+
